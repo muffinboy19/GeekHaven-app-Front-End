@@ -5,7 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './SplashScreen';
 import LandingPage from './LandingPage';
 import HomeScreen from './HomeScreen';
+import ProjectScreen from './ProjectScreen';
+import AddProjectScreen from './AddProjectScreen';
 import DetailsScreen from './DetailsScreen';
+import CommunityScreen from './CommunityScreen';
+import FeedPage from './FeedPage';
+import ProfileScreen from './ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,8 +31,14 @@ const Layout = () => {
         ) : (
           <>
             <Stack.Screen name="LandingPage" component={LandingPage} options={{ headerShown: false }} />
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+            <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}} />
             <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+            <Stack.Screen name="FeedPage" component={FeedPage} />
+            <Stack.Screen name="ProjectScreen" component={ProjectScreen} />
+            <Stack.Screen name="AddProjectScreen" component={AddProjectScreen} />
+            <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
+            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+            
           </>
         )}
       </Stack.Navigator>

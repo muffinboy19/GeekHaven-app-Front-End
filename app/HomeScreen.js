@@ -1,27 +1,34 @@
-// app/HomeScreen.js
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text, ImageBackground } from 'react-native';
+import TopBar from '../components/TopBar'; // Adjust import path
+import BottomNavBar from '../components/BottomNavBar';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('DetailsScreen')}
-      />
-    </View>
+    <ImageBackground source={require('../assets/images/homeScreenBackground.png')} style={styles.background}>
+      <TopBar />
+      <View style={styles.content}>
+      </View>
+      <BottomNavBar />
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  content: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  title: {
+  sampleText: {
     fontSize: 24,
+    fontWeight: 'bold',
     marginBottom: 20,
   },
 });
